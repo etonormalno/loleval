@@ -44,7 +44,7 @@ local max3 = Vector3.zero.Max;
 local HEALTH_BAR_OFFSET = Vector2.new(5, 0);
 local HEALTH_TEXT_OFFSET = Vector2.new(3, 0);
 local HEALTH_BAR_OUTLINE_OFFSET = Vector2.new(0, 1);
-local NAME_OFFSET = Vector2.new(0, 2);
+local NAME_OFFSET = Vector2.new(3, 0);
 local DISTANCE_OFFSET = Vector2.new(0, 2);
 local VERTICES = {
 	Vector3.new(-1, -1, -1),
