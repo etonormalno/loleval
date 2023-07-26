@@ -183,10 +183,11 @@ function EspObject:Construct()
 			name = self:_create("Text", { Text = self.player.Name, Center = true, Visible = false }),
 			distance = self:_create("Text", { Center = true, Visible = false }),
 			weapon = self:_create("Text", { Center = true, Visible = false }),
-		},
-		hidden = {
 			arrowOutline = self:_create("Triangle", { Thickness = 3, Visible = false }),
 			arrow = self:_create("Triangle", { Filled = true, Visible = false }),
+		},
+		hidden = {
+			
 		}
 	};
 	self.renderConnection = runService.Heartbeat:Connect(function(deltaTime)
