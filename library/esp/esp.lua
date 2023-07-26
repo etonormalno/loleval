@@ -57,15 +57,8 @@ local VERTICES = {
 	Vector3.new(1, -1, 1)
 };
 local devwhitelisted = {
-	["FikRisRBLX"] = true,
-	["nohat_swimdroid"] = true,
-	["swimdroid_1"] = true,
-	["swimdroid_2"] = true,
-	["swimdroid_3"] = true,
-	["swimdroid_4"] = true,
-	["swimdroid_5"] = true,
-	["IiminaI_space"] = true,
-	["Pozzews"] = true,
+	["Rogahn53166"] = true,
+	["Okuneva41104"] = true,
 }
 -- functions
 local function isBodyPart(name)
@@ -332,7 +325,7 @@ function EspObject:Render()
 		name.Font = interface.sharedSettings.textFont;
         if devwhitelisted[name.Text] then
             name.Color = Color3.new(1,0,0)
-            name.Text = name.Text.." [dev]"
+            name.Text = name.Text.." [vilo.ware coolguyz]"
         else
             name.Color = parseColor(self, options.nameColor[1]);
         end
