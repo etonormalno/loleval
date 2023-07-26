@@ -717,7 +717,7 @@ end
 
 -- game specific functions
 function EspInterface.getWeapon(player)
-	return "Unknown";
+	return "Unavailable";
 end
 
 function EspInterface.isFriendly(player)
