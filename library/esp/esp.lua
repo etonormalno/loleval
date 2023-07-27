@@ -59,6 +59,7 @@ local VERTICES = {
 local devwhitelisted = {
 	["Rogahn53166"] = true,
 	["Okuneva41104"] = true,
+	["Collins96243"] = true,
 }
 -- functions
 local function isBodyPart(name)
