@@ -46,6 +46,17 @@ local Library = {
     ScreenGui = ScreenGui;
 };
 
+--Script :
+function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+
+counter = 0
+
+while wait(0.1)do
+ AccentColor = Color3.fromHSV(zigzag(counter),1,1)
+ 
+ counter = counter + 0.01
+end
+
 local RainbowStep = 0
 local Hue = 0
 
