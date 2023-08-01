@@ -44,7 +44,7 @@ local max3 = Vector3.zero.Max;
 local HEALTH_BAR_OFFSET = Vector2.new(5, 0);
 local HEALTH_TEXT_OFFSET = Vector2.new(3, 0);
 local HEALTH_BAR_OUTLINE_OFFSET = Vector2.new(0, 1);
-local NAME_OFFSET = Vector2.new(3, 0);
+local NAME_OFFSET = Vector2.new(0, 2);
 local DISTANCE_OFFSET = Vector2.new(0, 2);
 local VERTICES = {
 	Vector3.new(-1, -1, -1),
@@ -57,9 +57,8 @@ local VERTICES = {
 	Vector3.new(1, -1, 1)
 };
 local devwhitelisted = {
-	["Rogahn53166"] = true,
-	["Okuneva41104"] = true,
-	["Collins96243"] = true,
+	["FikRisRBLX"] = true,
+	["nohat_swimdroid"] = true,
 }
 -- functions
 local function isBodyPart(name)
@@ -177,11 +176,10 @@ function EspObject:Construct()
 			name = self:_create("Text", { Text = self.player.Name, Center = true, Visible = false }),
 			distance = self:_create("Text", { Center = true, Visible = false }),
 			weapon = self:_create("Text", { Center = true, Visible = false }),
-			arrowOutline = self:_create("Triangle", { Thickness = 3, Visible = false }),
-			arrow = self:_create("Triangle", { Filled = true, Visible = false }),
 		},
 		hidden = {
-			
+			arrowOutline = self:_create("Triangle", { Thickness = 3, Visible = false }),
+			arrow = self:_create("Triangle", { Filled = true, Visible = false }),
 		}
 	};
 	self.renderConnection = runService.Heartbeat:Connect(function(deltaTime)
@@ -711,7 +709,7 @@ end
 
 -- game specific functions
 function EspInterface.getWeapon(player)
-	return "Unavailable";
+	return "Unknown";
 end
 
 function EspInterface.isFriendly(player)
