@@ -1,11 +1,5 @@
-rconsoleprint([["
- __   __   __     __         ______     __     __     ______     ______     ______    
-/\ \ / /  /\ \   /\ \       /\  __ \   /\ \  _ \ \   /\  __ \   /\  == \   /\  ___\   
-\ \ \'/   \ \ \  \ \ \____  \ \ \/\ \  \ \ \/ ".\ \  \ \  __ \  \ \  __<   \ \  __\   
- \ \__|    \ \_\  \ \_____\  \ \_____\  \ \__/".~\_\  \ \_\ \_\  \ \_\ \_\  \ \_____\ 
-  \/_/      \/_/   \/_____/   \/_____/   \/_/   \/_/   \/_/\/_/   \/_/ /_/   \/_____/ 
-                                                                                      "]])
+rconsoleprint('CHECK F9')
+error("Due to some changing in-game script of Project Delta script is temporarily down")
+warn("Please wait 2-3 days")
 
-rconsoleprint('@@RED@@')
-rconsoleprint('Script is Patched')
 
