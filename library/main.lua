@@ -9,10 +9,7 @@ local RenderStepped = RunService.RenderStepped;
 local LocalPlayer = Players.LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 
-local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
-
 local ScreenGui = Instance.new('ScreenGui');
-ProtectGui(ScreenGui);
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
@@ -37,7 +34,7 @@ local Library = {
     RiskColor = Color3.fromRGB(255, 50, 50),
 
     Black = Color3.new(0, 0, 0);
-    Font = Enum.Font.ArialBold,
+    Font = Enum.Font.Code,
 
     OpenedFrames = {};
     DependencyBoxes = {};
@@ -45,17 +42,6 @@ local Library = {
     Signals = {};
     ScreenGui = ScreenGui;
 };
-
---Script :
-function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
-
-counter = 0
-
-while wait(0.1)do
- Library.AccentColor = Color3.fromHSV(zigzag(counter),1,1)
- 
- counter = counter + 0.01
-end
 
 local RainbowStep = 0
 local Hue = 0
