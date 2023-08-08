@@ -492,7 +492,7 @@ function InstanceObject:Construct()
 	options.textSize = options.textSize or 13;
 	options.textFont = options.textFont or 2;
 	options.limitDistance = options.limitDistance or false;
-	options.maxDistance = options.maxDistance or 150;
+	options.maxDistance = options.maxDistance or 600;
 
 	self.text = Drawing.new("Text");
 	self.text.Center = true;
@@ -551,7 +551,7 @@ local EspInterface = {
 		textSize = 13,
 		textFont = 2,
 		limitDistance = false,
-		maxDistance = 150,
+		maxDistance = 600,
 		useTeamColor = false
 	},
 	teamSettings = {    
