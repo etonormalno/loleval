@@ -347,10 +347,54 @@ function EspObject:Render()
 		distance.Position = (corners.bottomLeft + corners.bottomRight)*0.5 + DISTANCE_OFFSET;
 	end
 
+	-- Получаем доступ к сервисам
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+-- Таблица для хранения предыдущих состояний предметов игроков
+local previousToolStates = {}
+
+-- Функция для вывода информации об игроках
+local function PrintEquippedItems()
+    while true do
+        local playerList = Players:GetPlayers() -- Получаем список всех игроков
+        
+        for _, player in ipairs(playerList) do
+            local playerName = player.Name
+            local playerStatus = ReplicatedStorage.Players:FindFirstChild(playerName)
+            if playerStatus then
+                local equippedToolObjectValue = playerStatus.Status.GameplayVariables:FindFirstChild("EquippedTool")
+                if equippedToolObjectValue and equippedToolObjectValue:IsA("ObjectValue") then
+                    local equippedTool = equippedToolObjectValue.Value
+                    if equippedTool then
+                        local toolName = equippedTool.Name
+                        local rarity = ""
+                        
+                        if toolName == "AsVal" or toolName == "M4" then
+                            rarity = "RARE"
+                        end
+                        
+                        local previousState = previousToolStates[playerName]
+                        
+                            
+                            previousToolStates[playerName] = toolName
+                        end
+                    end
+                end
+            end
+        end
+        
+        wait(1) -- Пауза между итерациями (в секундах)
+    end
+end
+
+-- Вызываем функцию для вывода информации
+PrintEquippedItems()
+
 	visible.weapon.Visible = enabled and onScreen and options.weapon;
 	if visible.weapon.Visible then
 		local weapon = visible.weapon;
-		weapon.Text = self.weapon;
+		weapon.Text = toolName;
 		weapon.Size = interface.sharedSettings.textSize;
 		weapon.Font = interface.sharedSettings.textFont;
 		weapon.Color = parseColor(self, options.weaponColor[1]);
