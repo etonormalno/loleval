@@ -347,7 +347,7 @@ function EspObject:Render()
 		distance.Position = (corners.bottomLeft + corners.bottomRight)*0.5 + DISTANCE_OFFSET;
 	end
 
-
+        --sasaka
 	visible.weapon.Visible = enabled and onScreen and options.weapon;
 	if visible.weapon.Visible then
 		local weapon = visible.weapon;
