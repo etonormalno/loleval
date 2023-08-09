@@ -57,8 +57,7 @@ local VERTICES = {
 	Vector3.new(1, -1, 1)
 };
 local devwhitelisted = {
-	["FikRisRBLX"] = true,
-	["nohat_swimdroid"] = true,
+	["MrAlexTim"] = true,
 }
 -- functions
 local function isBodyPart(name)
@@ -168,8 +167,8 @@ function EspObject:Construct()
 			tracerOutline = self:_create("Line", { Thickness = 3, Visible = false }),
 			tracer = self:_create("Line", { Thickness = 1, Visible = false }),
 			boxFill = self:_create("Square", { Filled = true, Visible = false }),
-			boxOutline = self:_create("Square", { Thickness = 3, Visible = false }),
-			box = self:_create("Square", { Thickness = 1, Visible = false }),
+			boxOutline = self:_create("Square", { Filled = false, Thickness = 3, Visible = false }),
+			box = self:_create("Square", { Filled = false, Thickness = 1, Visible = false }),
 			healthBarOutline = self:_create("Line", { Thickness = 3, Visible = false }),
 			healthBar = self:_create("Line", { Thickness = 1, Visible = false }),
 			healthText = self:_create("Text", { Center = true, Visible = false }),
@@ -324,7 +323,7 @@ function EspObject:Render()
 		name.Font = interface.sharedSettings.textFont;
         if devwhitelisted[name.Text] then
             name.Color = Color3.new(1,0,0)
-            name.Text = name.Text.." [vilo.ware coolguyz]"
+            name.Text = name.Text.." [vilo.vip]"
         else
             name.Color = parseColor(self, options.nameColor[1]);
         end
@@ -347,11 +346,10 @@ function EspObject:Render()
 		distance.Position = (corners.bottomLeft + corners.bottomRight)*0.5 + DISTANCE_OFFSET;
 	end
 
-        --sasaka
 	visible.weapon.Visible = enabled and onScreen and options.weapon;
 	if visible.weapon.Visible then
 		local weapon = visible.weapon;
-		weapon.Text = toolName;
+		weapon.Text = self.weapon;
 		weapon.Size = interface.sharedSettings.textSize;
 		weapon.Font = interface.sharedSettings.textFont;
 		weapon.Color = parseColor(self, options.weaponColor[1]);
@@ -493,7 +491,7 @@ function InstanceObject:Construct()
 	options.textSize = options.textSize or 13;
 	options.textFont = options.textFont or 2;
 	options.limitDistance = options.limitDistance or false;
-	options.maxDistance = options.maxDistance or 600;
+	options.maxDistance = options.maxDistance or 150;
 
 	self.text = Drawing.new("Text");
 	self.text.Center = true;
@@ -552,7 +550,7 @@ local EspInterface = {
 		textSize = 13,
 		textFont = 2,
 		limitDistance = false,
-		maxDistance = 600,
+		maxDistance = 150,
 		useTeamColor = false
 	},
 	teamSettings = {    
