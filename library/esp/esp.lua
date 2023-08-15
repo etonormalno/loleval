@@ -332,7 +332,7 @@ function espLibrary.addObject(object, options)
             Size = 13,
             Outline = true,
             OutlineColor = color3New(),
-            Font = 2,
+            Font = 18,
         })
     };
 end
@@ -358,8 +358,8 @@ function espLibrary:AddObjectEsp(object, defaultOptions)
     options.color = options.color or color3New(1, 1, 1);
     options.transparency = options.transparency or 1;
     options.text = options.text or object.Name;
-    options.font = options.font or 2;
-    options.fontSize = options.fontSize or 13;
+    options.font = options.font or 18;
+    options.fontSize = options.fontSize or 18;
 
     self.addObject(object, options);
 
