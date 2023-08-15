@@ -251,20 +251,20 @@ function espLibrary.addEsp(player)
             Size = 13,
             Outline = true,
             OutlineColor = color3New(),
-            Font = 2,
+            Font = 19, --2 on all Font
         }),
         side = create("Text", {
             Size = 13,
             Outline = true,
             OutlineColor = color3New(),
-            Font = 2,
+            Font = 19,
         }),
         bottom = create("Text", {
             Center = true,
             Size = 13,
             Outline = true,
             OutlineColor = color3New(),
-            Font = 2,
+            Font = 19,
         }),
         boxFill = create("Square", {
             Thickness = 1,
