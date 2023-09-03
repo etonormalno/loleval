@@ -1,6 +1,3 @@
---[[
-    made by blondex
-]]
 
 -- main module
 local espLibrary = {
